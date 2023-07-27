@@ -1,21 +1,22 @@
 import { defineConfig } from "tsup";
 import { esbuildPluginVersionInjector } from "esbuild-plugin-version-injector";
-import { esbuildPluginFilePathExtensions } from "esbuild-plugin-file-path-extensions";
+import { nodeModulesPolyfillPlugin } from "esbuild-plugins-node-modules-polyfill";
 
 export default defineConfig({
 	clean: true,
 	dts: true,
 	entry: ["src/index.ts"],
-	format: ["cjs"],
+	format: ["cjs", "esm", "iife"],
 	minify: true,
 	skipNodeModulesBundle: true,
 	sourcemap: true,
-	target: "esnext",
+	target: "es2020",
 	tsconfig: "src/tsconfig.json",
 	keepNames: true,
+	globalName: "PixelPizzaReshape",
 	esbuildPlugins: [
-		esbuildPluginVersionInjector(),
-		esbuildPluginFilePathExtensions()
+		nodeModulesPolyfillPlugin(),
+		esbuildPluginVersionInjector()
 	],
 	treeshake: true,
 	bundle: true,

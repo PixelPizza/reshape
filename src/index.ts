@@ -1,3 +1,10 @@
+import { Reshapers } from "./lib/Reshapers";
+
+export const r = new Reshapers();
+
+export * from "./lib/error/ReshapeError";
+export * from "./type-exports";
+
 /**
  * The version of this package you are currently using.
  * This can be used to display the version of the package in your application.
