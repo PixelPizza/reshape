@@ -74,5 +74,8 @@
 	"publishConfig": {
 		"access": "public"
 	},
-	"packageManager": "yarn@3.6.1"
+	"packageManager": "yarn@3.6.1",
+	"dependencies": {
+		"@sapphire/shapeshift": "^3.9.2"
+	}
 }
