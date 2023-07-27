@@ -652,6 +652,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@jspm/core@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "@jspm/core@npm:2.0.1"
+  checksum: 611f37cadd8a76662309e89afb68bf5936d0fed16aacc8886fef0f0af94a9f7e1241ce6c619b650fa1064631374f6fcadad99be04c9cf504a47f5361746b8d7f
+  languageName: node
+  linkType: hard
+
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5
   resolution: "@nodelib/fs.scandir@npm:2.1.5"
@@ -705,13 +712,12 @@ __metadata:
     "@typescript-eslint/eslint-plugin": ^6.2.0
     "@typescript-eslint/parser": ^6.2.0
     "@vitest/coverage-v8": ^0.33.0
-    esbuild-plugin-file-path-extensions: ^1.0.0
     esbuild-plugin-version-injector: ^1.2.0
+    esbuild-plugins-node-modules-polyfill: ^1.3.0
     eslint: ^8.45.0
     eslint-config-prettier: ^8.9.0
     eslint-plugin-deprecation: ^1.5.0
     eslint-plugin-prettier: ^5.0.0
-    gen-esm-wrapper: ^1.1.3
     husky: ^8.0.3
     lint-staged: ^13.2.3
     pinst: ^3.0.0
@@ -1404,16 +1410,6 @@ __metadata:
   version: 1.0.1
   resolution: "arrify@npm:1.0.1"
   checksum: 745075dd4a4624ff0225c331dacb99be501a515d39bcb7c84d24660314a6ec28e68131b137e6f7e16318170842ce97538cd298fc4cd6b2cc798e0b957f2747e7
-  languageName: node
-  linkType: hard
-
-"assert@npm:^1.4.1":
-  version: 1.5.0
-  resolution: "assert@npm:1.5.0"
-  dependencies:
-    object-assign: ^4.1.1
-    util: 0.10.3
-  checksum: 9be48435f726029ae7020c5888a3566bf4d617687aab280827f2e4029644b6515a9519ea10d018b342147c02faf73d9e9419e780e8937b3786ee4945a0ca71e5
   languageName: node
   linkType: hard
 
@@ -2137,19 +2133,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"esbuild-plugin-file-path-extensions@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "esbuild-plugin-file-path-extensions@npm:1.0.0"
-  checksum: 4e844b7822cf444c5e50bef81d59df0b04c4f1377970698679e0b562d5b3b7a3e415108511bbba37c0c394220faea31ec90c1c9fea048b45f218655507236ca7
-  languageName: node
-  linkType: hard
-
 "esbuild-plugin-version-injector@npm:^1.2.0":
   version: 1.2.0
   resolution: "esbuild-plugin-version-injector@npm:1.2.0"
   dependencies:
     "@sapphire/result": ^2.6.4
   checksum: 5a4834d019c09e290fe6a5b51181d8a60a1bd985b9354c85c082793749c9715cb9a51a6f0ad20dd2522fd1deb571b6bc657b5bf4ad23d8d34cc923375caf88d4
+  languageName: node
+  linkType: hard
+
+"esbuild-plugins-node-modules-polyfill@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "esbuild-plugins-node-modules-polyfill@npm:1.3.0"
+  dependencies:
+    "@jspm/core": ^2.0.1
+    local-pkg: ^0.4.3
+    resolve.exports: ^2.0.2
+  peerDependencies:
+    esbuild: ^0.14.0 || ^0.15.0 || ^0.16.0 || ^0.17.0 || ^0.18.0
+  checksum: 96e12e028b5d232d982c6b7611e95b9e05e4e6ac574bea113d0c863feadd3c672f9c0251db11ad239deff9c6890b82bca9aa07603a3ad6eda48e73c1305a7014
   languageName: node
   linkType: hard
 
@@ -2694,17 +2696,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"gen-esm-wrapper@npm:^1.1.3":
-  version: 1.1.3
-  resolution: "gen-esm-wrapper@npm:1.1.3"
-  dependencies:
-    is-valid-identifier: ^2.0.2
-  bin:
-    gen-esm-wrapper: gen-esm-wrapper.js
-  checksum: 600abe05141d3a3d71af3bd65a1967c7fd09bd7c60d487dca5c30b2af0f58b40580990d34cfa3ac1dffd78463d895912a100bac4ea6e8cb2ee4461bbafa67011
-  languageName: node
-  linkType: hard
-
 "get-caller-file@npm:^2.0.5":
   version: 2.0.5
   resolution: "get-caller-file@npm:2.0.5"
@@ -3130,13 +3121,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"inherits@npm:2.0.1":
-  version: 2.0.1
-  resolution: "inherits@npm:2.0.1"
-  checksum: 6536b9377296d4ce8ee89c5c543cb75030934e61af42dba98a428e7d026938c5985ea4d1e3b87743a5b834f40ed1187f89c2d7479e9d59e41d2d1051aefba07b
-  languageName: node
-  linkType: hard
-
 "ini@npm:^1.3.4":
   version: 1.3.8
   resolution: "ini@npm:1.3.8"
@@ -3290,15 +3274,6 @@ __metadata:
   dependencies:
     text-extensions: ^1.0.0
   checksum: fb5d78752c22b3f73a7c9540768f765ffcfa38c9e421e2b9af869565307fa1ae5e3d3a2ba016a43549742856846566d327da406e94a5846ec838a288b1704fd2
-  languageName: node
-  linkType: hard
-
-"is-valid-identifier@npm:^2.0.2":
-  version: 2.0.2
-  resolution: "is-valid-identifier@npm:2.0.2"
-  dependencies:
-    assert: ^1.4.1
-  checksum: 79e5237998621f09b76582d8ef6928eb4cc96e78795d317aa1ea260aa5d22d4dae3c5baa519414f8e9a4833ee948e3bf0bd98496802f492c30640d672b528117
   languageName: node
   linkType: hard
 
@@ -4165,7 +4140,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"object-assign@npm:^4.0.1, object-assign@npm:^4.1.1":
+"object-assign@npm:^4.0.1":
   version: 4.1.1
   resolution: "object-assign@npm:4.1.1"
   checksum: fcc6e4ea8c7fe48abfbb552578b1c53e0d194086e2e6bbbf59e0a536381a292f39943c6e9628af05b5528aa5e3318bb30d6b2e53cadaf5b8fe9e12c4b69af23f
@@ -4634,6 +4609,13 @@ __metadata:
   dependencies:
     global-dirs: ^0.1.1
   checksum: c4e11d33e84bde7516b824503ffbe4b6cce863d5ce485680fd3db997b7c64da1df98321b1fd0703b58be8bc9bc83bc96bd83043f96194386b45eb47229efb6b6
+  languageName: node
+  linkType: hard
+
+"resolve.exports@npm:^2.0.2":
+  version: 2.0.2
+  resolution: "resolve.exports@npm:2.0.2"
+  checksum: 1c7778ca1b86a94f8ab4055d196c7d87d1874b96df4d7c3e67bbf793140f0717fd506dcafd62785b079cd6086b9264424ad634fb904409764c3509c3df1653f2
   languageName: node
   linkType: hard
 
@@ -5578,15 +5560,6 @@ __metadata:
   version: 1.0.2
   resolution: "util-deprecate@npm:1.0.2"
   checksum: 474acf1146cb2701fe3b074892217553dfcf9a031280919ba1b8d651a068c9b15d863b7303cb15bd00a862b498e6cf4ad7b4a08fb134edd5a6f7641681cb54a2
-  languageName: node
-  linkType: hard
-
-"util@npm:0.10.3":
-  version: 0.10.3
-  resolution: "util@npm:0.10.3"
-  dependencies:
-    inherits: 2.0.1
-  checksum: bd800f5d237a82caddb61723a6cbe45297d25dd258651a31335a4d5d981fd033cb4771f82db3d5d59b582b187cb69cfe727dc6f4d8d7826f686ee6c07ce611e0
   languageName: node
   linkType: hard
 
