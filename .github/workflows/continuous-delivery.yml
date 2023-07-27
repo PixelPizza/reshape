@@ -16,7 +16,7 @@ on:
         default: pixelpizza/reshape
   push:
     branches:
-      - main
+      - dev
 
 jobs:
   Publish:
@@ -28,7 +28,7 @@ jobs:
         with:
           fetch-depth: 0
           repository: ${{ github.event.inputs.repository || 'pixelpizza/reshape' }}
-          ref: ${{ github.event.inputs.ref || 'main' }}
+          ref: ${{ github.event.inputs.ref || 'dev' }}
       - name: Add TypeScript problem matcher
         run: echo "::add-matcher::.github/problemMatchers/tsc.json"
       - name: Use Node.js v18
