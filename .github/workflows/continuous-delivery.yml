@@ -13,7 +13,7 @@ on:
       repository:
         description: The {owner}/{repository} that is being deployed.
         required: false
-        default: pixelpizza/ts-template
+        default: pixelpizza/reshape
   push:
     branches:
       - main
@@ -27,7 +27,7 @@ jobs:
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3
         with:
           fetch-depth: 0
-          repository: ${{ github.event.inputs.repository || 'pixelpizza/ts-template' }}
+          repository: ${{ github.event.inputs.repository || 'pixelpizza/reshape' }}
           ref: ${{ github.event.inputs.ref || 'main' }}
       - name: Add TypeScript problem matcher
         run: echo "::add-matcher::.github/problemMatchers/tsc.json"

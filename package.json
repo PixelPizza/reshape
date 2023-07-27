@@ -1,7 +1,7 @@
 {
-	"name": "@pixelpizza/ts-template",
+	"name": "@pixelpizza/reshape",
 	"version": "1.0.0",
-	"description": "Template for creating TypeScript projects",
+	"description": "Shapeshift reshape utilities",
 	"main": "dist/index.js",
 	"module": "dist/index.mjs",
 	"types": "dist/index.d.ts",
@@ -11,7 +11,8 @@
 		"types": "./dist/index.d.ts"
 	},
 	"directories": {
-		"lib": "src"
+		"lib": "src",
+		"test": "test"
 	},
 	"files": [
 		"dist"
@@ -33,15 +34,15 @@
 	},
 	"repository": {
 		"type": "git",
-		"url": "git+https://github.com/PixelPizza/ts-template.git"
+		"url": "git+https://github.com/PixelPizza/reshape.git"
 	},
 	"keywords": [],
 	"author": "@pixelpizza",
 	"license": "MIT",
 	"bugs": {
-		"url": "https://github.com/PixelPizza/ts-template/issues"
+		"url": "https://github.com/PixelPizza/reshape/issues"
 	},
-	"homepage": "https://github.com/PixelPizza/ts-template#readme",
+	"homepage": "https://github.com/PixelPizza/reshape#readme",
 	"devDependencies": {
 		"@commitlint/cli": "^17.6.7",
 		"@commitlint/config-conventional": "^17.6.7",
@@ -66,7 +67,6 @@
 		"lint-staged": "^13.2.3",
 		"pinst": "^3.0.0",
 		"prettier": "^3.0.0",
-		"pretty-quick": "^3.1.3",
 		"tsup": "^7.1.0",
 		"typescript": "^5.1.6",
 		"vitest": "^0.33.0"

@@ -5,7 +5,7 @@ import { esbuildPluginFilePathExtensions } from "esbuild-plugin-file-path-extens
 export default defineConfig({
 	clean: true,
 	dts: true,
-	entry: ["src/**/*.ts"],
+	entry: ["src/index.ts"],
 	format: ["cjs"],
 	minify: true,
 	skipNodeModulesBundle: true,

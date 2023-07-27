@@ -1,2 +1,3 @@
-# ts-template
-Template for creating TypeScript projects
+# reshape
+
+Shapeshift reshape utilities
